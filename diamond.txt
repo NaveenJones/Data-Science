@@ -1,0 +1,22 @@
+while True:
+    number = int(input("Enter an odd number or hit ENTER to quit program: "))
+    if number == "":
+        print ("ending program...)
+        break
+    elif (number) == 0:
+        print ("\nCannot print symbols for a zero value, try again.\n")
+    elif (number) % 2 == 0:
+        print ("\nThat's an even number, try again.\n")
+    else:   
+        for i in range((int(number))+1):
+            if i % 2 == 0:
+                None
+            else:
+                print (("*" * i).center(int(number)))
+
+        for i in range((int(number))-1):
+            if i % 2 == 0:
+                None
+            else: 
+                print (("*" * ((int(number)) - (i + 1))).center(int(number)))
+    break               
