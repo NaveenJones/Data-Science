@@ -1,0 +1,52 @@
+import speech_recognition as sr
+import pyttsx3
+ 
+# Record Audio
+def firs():
+    global r
+    global audio 
+
+    with sr.Microphone() as source:
+        r = sr.Recognizer()
+
+        
+        print("Say something!")
+        audio = r.listen(source)
+ 
+# Speech recognition using Google Speech Recognition
+
+    try:
+   
+    
+        print("You said: " + r.recognize_google(audio))
+
+    except sr.UnknownValueError:
+        print("Google Speech Recognition could not understand audio")
+    except sr.RequestError as e:
+        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+
+def firs2():   
+    if r.recognize_google(audio)=="how are you":
+        
+    
+        engine = pyttsx3.init()
+        engine.say(' hai  ')
+    
+    
+        engine.runAndWait()
+        
+    elif r.recognize_google(audio)=="hello cheran":
+        engine = pyttsx3.init()
+        engine.say('welcome')
+    
+    
+        engine.runAndWait()
+    
+    
+firs()
+firs2()
+flag=1
+while flag:
+    firs()
+    firs2()
