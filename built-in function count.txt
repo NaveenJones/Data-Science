@@ -1,0 +1,10 @@
+#to count identical words without using a count function
+def count(phrase, word):
+    count1 = 0
+    num_phrase = len(phrase)   
+    num_letters = len(word)    
+    for i in range(num_letters):
+        if word[i:i+num_phrase] == phrase:
+          count1 += 1
+    return count1
+count('boy','rahul is good boy good ou boy hai boy')
