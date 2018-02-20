@@ -1,0 +1,47 @@
+#staff entries
+#instead of using thumb scanning device
+#need to develop more
+import datetime
+import time
+import pandas as pd
+names = []
+in_times = []
+out_times = []
+anames = []
+while True:
+    
+    oo = input(' Name : ')
+    if oo == 'no':
+        break
+    elif oo=="":
+        print('invalid')
+    else:
+        anames.append(oo)
+        jk = [oo]
+        qq = datetime.datetime.now().strftime("%X")
+        names.append(jk)
+        in_times.append(qq)
+        print('in-time:',qq)
+    
+
+num = 0
+for i in in_times:
+    names[num].append(i)
+    num +=1
+    
+
+while True:
+    ee = input('Name : ')
+    if ee == "no":
+        break
+    elif ee in anames:
+        for ops in names:
+            if ee in ops:
+                ind = names.index(ops)
+        ww = datetime.datetime.now().strftime("%X")
+        names[ind].append(ww)
+        print('out-time',ww)
+    else :
+        print('no name in the list')
+
+pd.DataFrame(names,columns = ["Names", "In-time", "Out-time"])
