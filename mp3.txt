@@ -1,0 +1,37 @@
+# mp3 playlist with repeat mode 
+import numpy as np
+def ff(ss):
+    
+    
+    ee =[]
+    
+    for a in ss:
+        print(a)
+        
+    while True:
+        q = input("enter a song u want : ")
+   
+    
+        if q in ss  :
+            print("u are listening to : ",q)
+
+            ee.append(q)
+            ul = np.unique(ee)
+            print("it is added to playlist : ",ul)
+        else:
+            
+            print("its not available ")
+            break    
+    
+    pp = ee*5
+    #print(pp)
+    for ii in pp:
+        print("the songs in the playlist is in repeat mode : ")
+        print (ii)
+    #for pp in ee:
+     #   print (pp)
+        
+      #  for i in range(5):
+       #     print(pp)
+ff(['song1','song2','song3','song4','song5'])  
+
