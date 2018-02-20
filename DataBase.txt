@@ -1,0 +1,25 @@
+import MySQLdb
+#getting profit by using datas in database
+import pandas as pd
+# db = MySQLdb.connect("localhost","root","","kmeans" )
+
+# datas = pd.read_sql('SELECT * FROM stocks_daily;',db)
+
+def Profit(datas):
+        profits=[] 
+        i = 0  
+        while i < len(datas): 
+            Tclose =  datas.iloc[i]['close_price'] 
+            Yclose = datas.iloc[i-1]['close_price']
+            i = i + 1
+            profit=Tclose-Yclose
+            profits.append(profit)
+            print (Tclose,Yclose)
+           
+        Profit = pd.Series(profits)
+    
+        return Profit
+con = MySQLdb.connect("localhost","root","","kmeans")
+data=pd.read_sql("select distinct ticker from nifty100_symbols",con)
+print (data)
+    
